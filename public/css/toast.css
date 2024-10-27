@@ -1,0 +1,65 @@
+.toast-wrapper {
+    position: fixed;
+    min-width: 300px;
+    top: 15%;
+    right: -200%;
+    border-radius: 12px;
+    background: white;
+    overflow: hidden;
+    transition: all ease-in-out 0.7s;
+    z-index: 9999;
+}
+
+.toast-success.show {
+    right: 5%;
+}
+
+.toast-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.toast-close:hover {
+    opacity: 1;
+}
+
+.toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+}
+
+.toast-progress:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.progress-success:before {
+    background-color: #13d16c;
+    box-shadow: 0 -2px 15px rgba(19, 209, 108, 0.55);
+}
+
+.progress-error:before {
+    background-color: #e84118;
+    box-shadow: 0 -2px 15px rgba(232, 65, 23, 0.55);
+}
+
+.toast-progress.run:before {
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        right: 100%;
+    }
+}
